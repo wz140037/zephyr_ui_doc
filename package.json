@@ -23,5 +23,8 @@
   "homepage": "https://github.com/wz140037/zephyr_ui_doc#readme",
   "devDependencies": {
     "vitepress": "^1.6.4"
+  },
+  "dependencies": {
+    "@zephyr_zz/zephyr-ui": "^0.0.0"
   }
 }

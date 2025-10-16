@@ -4,16 +4,16 @@ export default defineConfig({
   title: 'Zephyr UI',
   description: '轻量、高效的前端组件库文档',
   lang: 'zh-CN',
-
+  head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/asset/logo.svg' }],
+  ],
   themeConfig: {
-    logo: '/logo.png',
-
+    logo: '/asset/logo.svg',
     nav: [
       { text: '指南', link: '/guide/' },
       { text: '组件', link: '/components/button' },
       { text: 'GitHub', link: 'https://github.com/wz140037/zephyr_ui_doc' },
     ],
-
     sidebar: {
       '/guide/': [
         {
