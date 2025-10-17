@@ -1,0 +1,72 @@
+<!-- Save as docs/public/hero.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600" role="img" aria-label="Zephyr UI hero">
+  <defs>
+    <linearGradient id="gradA" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#6fb5ff"/>
+      <stop offset="1" stop-color="#8b6bff"/>
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="1" stop-color="#f1f6ff" stop-opacity="0.98"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#2b6edb" flood-opacity="0.12"/>
+    </filter>
+
+    <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feOffset dx="0" dy="8" result="o"/>
+      <feComposite in="o" in2="b" operator="out" result="c"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.06 0 0 0 0 0.19 0 0 0 0 0.44 0 0 0 0.12 0" result="cm"/>
+      <feBlend in="SourceGraphic" in2="cm" mode="normal"/>
+    </filter>
+
+    <radialGradient id="glow" cx="0.7" cy="0.35" r="0.9">
+      <stop offset="0%" stop-color="#8bbdff" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#cda6ff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- background glow -->
+  <rect x="0" y="0" width="900" height="600" fill="url(#glow)"/>
+
+  <!-- tilted card group -->
+  <g transform="translate(410,300) rotate(-20)">
+    <!-- back shadow plate -->
+    <rect x="-180" y="-120" width="360" height="240" rx="26" fill="#203449" transform="translate(16,22)" opacity="0.12" />
+    <!-- main card -->
+    <rect x="-180" y="-120" width="360" height="240" rx="26" fill="url(#cardGrad)" filter="url(#softShadow)"/>
+    <!-- colored rim -->
+    <rect x="-176" y="-116" width="352" height="232" rx="22" fill="none" stroke="url(#gradA)" stroke-width="6" opacity="0.95"/>
+    
+    <!-- inner content: a stylized lightning + markdown box -->
+    <g transform="translate(-60,-30) scale(1.1)">
+      <!-- outer white rounded rect (inner panel) -->
+      <rect x="-12" y="-6" width="144" height="108" rx="14" fill="white" opacity="0.98" />
+      <!-- small shadow under panel -->
+      <rect x="-12" y="-6" width="144" height="108" rx="14" fill="none" stroke="#e6eefc" stroke-width="2" />
+      
+      <!-- lightning badge -->
+      <g transform="translate(20,8)">
+        <rect x="0" y="0" width="56" height="56" rx="10" fill="url(#gradA)"/>
+        <path d="M26 10 L18 32 H28 L20 46 L36 24 H28 L36 10 Z" fill="white"/>
+      </g>
+      
+      <!-- markdown badge -->
+      <g transform="translate(96,18)">
+        <rect x="0" y="0" width="36" height="36" rx="6" fill="#f2f8ff" />
+        <text x="18" y="24" font-family="Segoe UI, Roboto, 'PingFang SC', sans-serif" font-weight="700" font-size="16" text-anchor="middle" fill="#3b82f6">M↓</text>
+      </g>
+
+      <!-- subtle decorative lines -->
+      <rect x="20" y="72" width="104" height="6" rx="3" fill="#eef6ff"/>
+      <rect x="20" y="84" width="68" height="6" rx="3" fill="#f6f9ff"/>
+    </g>
+  </g>
+
+  <!-- small accent orb to right -->
+  <circle cx="740" cy="180" r="72" fill="url(#gradA)" opacity="0.08"/>
+</svg>

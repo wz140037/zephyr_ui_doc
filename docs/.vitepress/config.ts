@@ -6,10 +6,10 @@ export default defineConfig({
   description: '轻量、高效的前端组件库文档',
   lang: 'zh-CN',
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/asset/logo.svg' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: './public/logo.svg' }],
   ],
   themeConfig: {
-    logo: '/asset/logo.svg',
+    logo: '/public/logo.svg',
     nav: [
       { text: '指南', link: '/guide/' },
       { text: '组件', link: '/components/button' },
