@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/zephyr_ui_doc/',
   title: 'Zephyr UI',
   description: '轻量、高效的前端组件库文档',
   lang: 'zh-CN',
