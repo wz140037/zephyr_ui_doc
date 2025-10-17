@@ -6,7 +6,7 @@ hero:
   text: 高效、轻量的前端组件库
   tagline: 用于构建现代化前端项目的组件体系
   image: 
-    src: /public/hero.svg
+    src: /image/hero.svg
   actions:
     - theme: brand
       text: 快速开始
