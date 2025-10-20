@@ -35,7 +35,7 @@ export default defineConfig({
         },
       ],
     },
-
+    
     socialLinks: [
       { icon: 'github', link: 'https://github.com/wz140037/zephyr_ui_doc' },
     ],

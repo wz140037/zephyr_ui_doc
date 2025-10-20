@@ -3,17 +3,14 @@
 ## 安装
 
 ```bash
-npm install zephyr-ui
+npm install @zephyr_zz/zephyr-ui --save
 ```
 
 ## 引入
 
 ```ts
-import Vue from 'vue';
-import ZephyrUI from 'zephyr-ui';
-import 'zephyr-ui/dist/index.css';
+import { ZzButton } from '@zephyr_zz/zephyr-ui';
 
-Vue.use(ZephyrUI);
 ```
 
 ## 使用
@@ -21,7 +18,7 @@ Vue.use(ZephyrUI);
 ```vue
 <template>
   <div>
-    <z-button>按钮</z-button>
+    <Zzbutton>按钮</Zzbutton>
   </div>
 </template>
 ```

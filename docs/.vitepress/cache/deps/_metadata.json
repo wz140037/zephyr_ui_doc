@@ -1,37 +1,43 @@
 {
-  "hash": "953a5fd4",
-  "configHash": "e16051f1",
-  "lockfileHash": "132787aa",
-  "browserHash": "c13eb5f0",
+  "hash": "8a7d248a",
+  "configHash": "26e2688b",
+  "lockfileHash": "bd723fa0",
+  "browserHash": "c4a93811",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "6974bf37",
+      "fileHash": "4fc21194",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
-      "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
+      "src": "../../../../node_modules/.pnpm/@vue+devtools-api@7.7.7/node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "c7793a56",
+      "fileHash": "d60f13d5",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
-      "src": "../../../../node_modules/@vueuse/core/index.mjs",
+      "src": "../../../../node_modules/.pnpm/@vueuse+core@12.8.2/node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "32247553",
+      "fileHash": "380e57d2",
       "needsInterop": false
     },
     "@theme/index": {
-      "src": "../../../../node_modules/vitepress/dist/client/theme-default/index.js",
+      "src": "../../../../node_modules/.pnpm/vitepress@1.6.4_@algolia+cl_ba26ca2b4cb19dc879c4c245ecb2d2e5/node_modules/vitepress/dist/client/theme-default/index.js",
       "file": "@theme_index.js",
-      "fileHash": "d5dfec24",
+      "fileHash": "9a2e87b2",
+      "needsInterop": false
+    },
+    "@zephyr_zz/zephyr-ui": {
+      "src": "../../../../node_modules/.pnpm/@zephyr_zz+zephyr-ui@0.0.16/node_modules/@zephyr_zz/zephyr-ui/dist/zephyr-ui.es.js",
+      "file": "@zephyr_zz_zephyr-ui.js",
+      "fileHash": "fecbc71a",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-Q2AYPHVK": {
-      "file": "chunk-Q2AYPHVK.js"
+    "chunk-EIFETTSO": {
+      "file": "chunk-EIFETTSO.js"
     },
     "chunk-QAXAIFA7": {
       "file": "chunk-QAXAIFA7.js"

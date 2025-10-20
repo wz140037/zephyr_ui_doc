@@ -27,6 +27,6 @@
     "vitepress": "^1.6.4"
   },
   "dependencies": {
-    "@zephyr_zz/zephyr-ui": "^0.0.0"
+    "@zephyr_zz/zephyr-ui": "^0.0.16"
   }
 }
