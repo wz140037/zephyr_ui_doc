@@ -25,10 +25,12 @@
   "devDependencies": {
     "element-plus": "^2.11.5",
     "gh-pages": "^6.3.0",
-    "vitepress": "^1.6.4"
+    "sass": "^1.93.2",
+    "shiki": "^3.13.0",
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.22"
   },
   "dependencies": {
-    "@zephyr_zz/zephyr-ui": "^0.0.18",
-    "monaco-editor-core": "^0.52.2"
+    "@zephyr_zz/zephyr-ui": "^0.0.18"
   }
 }

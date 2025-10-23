@@ -7,10 +7,9 @@
 <script setup lang="ts">
 import 'element-plus/dist/index.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
-import * as monaco from 'monaco-editor-core'
 
 import { BundledLanguage, BundledTheme } from 'shiki'
-import { ZephyrEditor } from '@zephyr_zz/zephyr-ui'
+// import { ZephyrEditor } from '@zephyr_zz/zephyr-ui'
 import { nextTick, ref, useTemplateRef, watch } from 'vue';
 import { ElSelect } from 'element-plus';
 
@@ -26,10 +25,10 @@ const options = {
   },
   fontSize: 14,
   wordWrap: 'off', // 自动换行
-} as monaco.editor.IStandaloneEditorConstructionOptions
+} as any
 
 const editorRef = useTemplateRef('zephyrEditorRe2')
-let editor: monaco.editor.IStandaloneCodeEditor | null = null
+let editor: any | null = null
 const language = ref('javascript')
 const theme = ref('github-dark')
 const languageOptions = [

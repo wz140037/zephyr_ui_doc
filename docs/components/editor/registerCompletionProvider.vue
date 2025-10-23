@@ -5,10 +5,8 @@
  * langueTheme.vue
 -->
 <script setup lang="ts">
-import * as monaco from 'monaco-editor-core'
-
 import { language as sqlLanguage } from './sql.js'
-import { ZephyrEditor } from '@zephyr_zz/zephyr-ui'
+// import { ZephyrEditor } from '@zephyr_zz/zephyr-ui'
 import { onMounted, ref, useTemplateRef } from 'vue';
 
 // sql样例
@@ -38,42 +36,46 @@ const options = {
   },
   fontSize: 14,
   wordWrap: 'off', // 自动换行
-} as monaco.editor.IStandaloneEditorConstructionOptions
+} as any
 
 const editorRef = useTemplateRef('zephyrEditorRef3')
 
 onMounted(() => {
   // 注册代码提示（sql版本）
   if (editorRef.value) {
-    setTimeout(() => {  
+    setTimeout(() => {
       editorRef.value.registerCompletionItemProvider('sql', {
         provideCompletionItems: function () {
           const suggestions = [] as any
           sqlLanguage.keywords.forEach(item => {
             suggestions.push({
               label: item,
-              kind: monaco.languages.CompletionItemKind.Keyword,
+              // monaco.languages.CompletionItemKind.Keyword === 17
+              kind: 17,
               insertText: item,
             })
           })
           sqlLanguage.operators.forEach(item => {
             suggestions.push({
               label: item,
-              kind: monaco.languages.CompletionItemKind.Operator,
+              // monaco.languages.CompletionItemKind.Operator === 11
+              kind: 11,
               insertText: item,
             })
           })
           sqlLanguage.builtinFunctions.forEach(item => {
             suggestions.push({
               label: item,
-              kind: monaco.languages.CompletionItemKind.Function,
+              // monaco.languages.CompletionItemKind.Function === 1
+              kind: 1,
               insertText: item,
             })
           })
           sqlLanguage.builtinVariables.forEach(item => {
             suggestions.push({
               label: item,
-              kind: monaco.languages.CompletionItemKind.Variable,
+              // monaco.languages.CompletionItemKind.Variable === 4
+              kind: 4,
               insertText: item,
             })
           })

@@ -14,7 +14,9 @@
   import RegisterCompletionProviderDemo from './registerCompletionProvider.vue';
 </script>
 
+<ClientOnly>
 <BaseDemo></BaseDemo>
+</ClientOnly>
 
 ```vue
 <script setup lang="ts">
@@ -53,7 +55,10 @@ const options = {
 
 ### 主题、语言切换
 ---
+
+<ClientOnly>
 <LanguageThemeDemo></LanguageThemeDemo>
+</ClientOnly>
 
 ```vue
 <script setup lang="ts">
@@ -85,7 +90,9 @@ watch(()=>[language.value, theme.value], themeLanguageToggle)
 ### 注册提示词
 ---
 
+<ClientOnly>
 <RegisterCompletionProviderDemo></RegisterCompletionProviderDemo>
+</ClientOnly>
 
 ```vue
 <script setup lang="ts">

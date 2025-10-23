@@ -34,22 +34,22 @@ export default defineConfig({
           ],
         },
         {
-          text:'高级组件',
-          items:[
+          text: '高级组件',
+          items: [
             { text: 'ZephyrEditor 编辑器', link: '/components/editor/zephyreditor' },
             { text: 'ZephyrFiledMap 字段映射', link: '/components/ZephyrFiledMap' },
           ]
         }
       ],
     },
-    
+
     socialLinks: [
       { icon: 'github', link: 'https://github.com/wz140037/zephyr_ui_doc' },
     ],
   },
-  vite:{
-    ssr:{
+  vite: {
+    ssr: {
       noExternal: ['@zephyr_zz/zephyr-ui']
-    }
+    },
   }
 })

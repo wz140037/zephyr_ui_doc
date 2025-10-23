@@ -5,7 +5,7 @@
  * base.vue
 -->
 <script setup lang="ts">
-import { ZephyrEditor } from '@zephyr_zz/zephyr-ui'
+// import { ZephyrEditor } from '@zephyr_zz/zephyr-ui'
 import { ref } from 'vue';
 
 const code = ref('import { ref } from "vue";\n\nconst count = ref(0);\n\nfunction increment() {\n  count.value++;\n}')

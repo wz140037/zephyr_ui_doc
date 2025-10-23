@@ -14,9 +14,6 @@ import { ZzButton } from '@zephyr_zz/zephyr-ui';
 ## 代码演示
 
 ### 基础用法
-<script setup lang="ts">
-  import { ZzButton } from '@zephyr_zz/zephyr-ui';
-</script>
 ----
 <ZzButton>默认按钮</ZzButton>
 
@@ -34,6 +31,7 @@ import { ZzButton } from '@zephyr_zz/zephyr-ui';
 
 ### 禁用状态
 ----
+
 <ZzButton disabled>默认按钮</ZzButton>
 
 ```vue
@@ -45,10 +43,11 @@ import { ZzButton } from '@zephyr_zz/zephyr-ui';
 ```
 ### 按钮类型
 ----
+
 <div class="container">
-<ZzButton>默认按钮</ZzButton>
-<ZzButton :style="{marginLeft: '10px'}" type="success">成功按钮</ZzButton>
-<ZzButton :style="{marginLeft: '10px'}" type="warning">警告按钮</ZzButton>
+  <ZzButton>默认按钮</ZzButton>
+  <ZzButton :style="{marginLeft: '10px'}" type="success">成功按钮</ZzButton>
+  <ZzButton :style="{marginLeft: '10px'}" type="warning">警告按钮</ZzButton>
 </div>
 
 ```vue
