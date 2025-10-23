@@ -33,6 +33,13 @@ export default defineConfig({
             { text: 'Form 表单', link: '/components/form' },
           ],
         },
+        {
+          text:'高级组件',
+          items:[
+            { text: 'ZephyrEditor 编辑器', link: '/components/editor/zephyreditor' },
+            { text: 'ZephyrFiledMap 字段映射', link: '/components/ZephyrFiledMap' },
+          ]
+        }
       ],
     },
     
@@ -40,4 +47,9 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/wz140037/zephyr_ui_doc' },
     ],
   },
+  vite:{
+    ssr:{
+      noExternal: ['@zephyr_zz/zephyr-ui']
+    }
+  }
 })

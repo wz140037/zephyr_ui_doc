@@ -23,10 +23,12 @@
   },
   "homepage": "https://github.com/wz140037/zephyr_ui_doc#readme",
   "devDependencies": {
+    "element-plus": "^2.11.5",
     "gh-pages": "^6.3.0",
     "vitepress": "^1.6.4"
   },
   "dependencies": {
-    "@zephyr_zz/zephyr-ui": "^0.0.16"
+    "@zephyr_zz/zephyr-ui": "^0.0.18",
+    "monaco-editor-core": "^0.52.2"
   }
 }
