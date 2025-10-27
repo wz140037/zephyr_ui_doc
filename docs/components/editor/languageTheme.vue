@@ -73,13 +73,18 @@ const themeOptions = [
   }
 ] as { label: BundledTheme, value: BundledTheme }[]
 
+// 编辑器load-ZzEditorLoadEvent
+const handleEditorLoad = (e: any) => {
+  if (e.state === 'success') {
+    editor = e.editor
+  }
+}
+
 // 切换主题、语言
 const themeLanguageToggle = () => {
-  if (!editor) {
-    editor = editorRef.value?.getEditor()!
-  }
+  if (!editor) return
   nextTick(() => {
-    editor?.updateOptions({
+    editor.updateOptions({
       language: language.value,
       theme: theme.value
     } as any)
@@ -98,7 +103,8 @@ watch(() => [language.value, theme.value], themeLanguageToggle)
       <ElSelect v-model="theme" :options="themeOptions" placeholder="请选择主题" />
     </div>
     <div class="editor-container">
-      <ZephyrEditor ref="zephyrEditorRe2" v-model="code" :options="options"></ZephyrEditor>
+      <ZephyrEditor @load="handleEditorLoad($event)" ref="zephyrEditorRe2" v-model="code" :options="options">
+      </ZephyrEditor>
     </div>
   </div>
 </template>

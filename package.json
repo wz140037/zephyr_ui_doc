@@ -31,6 +31,6 @@
     "vue": "^3.5.22"
   },
   "dependencies": {
-    "@zephyr_zz/zephyr-ui": "^0.0.18"
+    "@zephyr_zz/zephyr-ui": "^0.0.19"
   }
 }

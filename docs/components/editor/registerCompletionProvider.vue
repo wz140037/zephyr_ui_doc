@@ -38,13 +38,10 @@ const options = {
   wordWrap: 'off', // 自动换行
 } as any
 
-const editorRef = useTemplateRef('zephyrEditorRef3')
-
-onMounted(() => {
-  // 注册代码提示（sql版本）
-  if (editorRef.value) {
-    setTimeout(() => {
-      editorRef.value.registerCompletionItemProvider('sql', {
+const editorRef = useTemplateRef<any>('zephyrEditorRef3')
+const handleEditorLoad = (e: any) => {
+  if (e.state === 'success' && editorRef.value) {
+        editorRef.value.registerCompletionItemProvider('sql', {
         provideCompletionItems: function () {
           const suggestions = [] as any
           sqlLanguage.keywords.forEach(item => {
@@ -84,16 +81,15 @@ onMounted(() => {
           }
         },
       })
-    }, 3000);
   }
-})
+}
 
 </script>
 
 <template>
   <div class="demo-container">
     <div class="editor-container">
-      <ZephyrEditor ref="zephyrEditorRef3" v-model="code" :options="options"></ZephyrEditor>
+      <ZephyrEditor @load="handleEditorLoad($event)" ref="zephyrEditorRef3" v-model="code" :options="options"></ZephyrEditor>
     </div>
   </div>
 </template>

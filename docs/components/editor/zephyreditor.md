@@ -68,20 +68,34 @@ let editor: monaco.editor.IStandaloneCodeEditor | null = null
 const language = ref('javascript')
 const theme = ref('github-dark')
 
+// 编辑器load
+const handleEditorLoad = (e: ZzEditorLoadEvent) => {
+  if (e.state === 'success') {
+    editor = e.editor
+  }
+}
+
 // 切换主题、语言
 const themeLanguageToggle = () => {
-  if (!editor) {
-    editor = editorRef.value?.getEditor()!
-  }
+  if (!editor) return
   nextTick(() => {
-    editor?.updateOptions({
+    editor.updateOptions({
       language: language.value,
       theme: theme.value
     } as any)
   })
 }
 
-watch(()=>[language.value, theme.value], themeLanguageToggle)
+watch(() => [language.value, theme.value], themeLanguageToggle)
+
+// ...其他代码...
+
+<ZephyrEditor 
+  @load="handleEditorLoad($event)" 
+  ref="zephyrEditorRe2" 
+  v-model="code" 
+  :options="options" 
+/>
 
 // ...其他代码...
 
@@ -98,18 +112,40 @@ watch(()=>[language.value, theme.value], themeLanguageToggle)
 <script setup lang="ts">
 // ...其他代码...
 const editorRef = useTemplateRef('zephyrEditorRef')
-
-onMounted(() => {
-  // 注册代码提示（sql版本）
-  if (editorRef.value) {
-    setTimeout(() => {  
-      editorRef.value.registerCompletionItemProvider('sql', {
+const handleEditorLoad = (e: ZzEditorLoadEvent) => {
+  if (e.state === 'success' && editorRef.value) {
+        editorRef.value.registerCompletionItemProvider('sql', {
         provideCompletionItems: function () {
           const suggestions = [] as any
           sqlLanguage.keywords.forEach(item => {
             suggestions.push({
               label: item,
-              kind: monaco.languages.CompletionItemKind.Keyword,
+              // monaco.languages.CompletionItemKind.Keyword === 17
+              kind: 17,
+              insertText: item,
+            })
+          })
+          sqlLanguage.operators.forEach(item => {
+            suggestions.push({
+              label: item,
+              // monaco.languages.CompletionItemKind.Operator === 11
+              kind: 11,
+              insertText: item,
+            })
+          })
+          sqlLanguage.builtinFunctions.forEach(item => {
+            suggestions.push({
+              label: item,
+              // monaco.languages.CompletionItemKind.Function === 1
+              kind: 1,
+              insertText: item,
+            })
+          })
+          sqlLanguage.builtinVariables.forEach(item => {
+            suggestions.push({
+              label: item,
+              // monaco.languages.CompletionItemKind.Variable === 4
+              kind: 4,
               insertText: item,
             })
           })
@@ -118,9 +154,8 @@ onMounted(() => {
           }
         },
       })
-    }, 3000);
   }
-})
+}
 
 // ...其他代码...
 
@@ -140,7 +175,4 @@ onMounted(() => {
 
 | 属性名 | 类型 | 默认值 | 说明 |
 | :-- | :-- | :-- | :-- |
-| `getText` | `() => string` | `-` | 获取当前编辑器的文本内容。 |
-| `getEditor` | `() => monaco.editor.IStandaloneCodeEditor \| null` | `-` | 获取编辑器实例 |
 | `registerCompletionItemProvider` | `(languageSelector: monaco.languages.LanguageSelector, provider: monaco.languages.CompletionItemProvider) => void` | `-` | 注册代码补全提示器，为指定语言添加智能提示。 |
-| `getHighlighter` | `() => Highlighter \| null` | `-` | 获取 Shiki 高亮器实例，可用于动态注册语言或主题。 |
