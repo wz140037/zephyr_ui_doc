@@ -12,6 +12,7 @@
   import BaseDemo from './base.vue';
   import LanguageThemeDemo from './LanguageTheme.vue';
   import RegisterCompletionProviderDemo from './registerCompletionProvider.vue';
+  import PropsTableVue from './propsTable.vue';
 </script>
 
 <ClientOnly>
@@ -165,10 +166,8 @@ const handleEditorLoad = (e: ZzEditorLoadEvent) => {
 
 ### ZephyrEditor Props
 ---
-| 属性名 | 类型 | 默认值 | 说明 |
-| :----: | :----: | :----: | :----: |
-| `modelValue` | `string` | - | 编辑器内容 |
-| `options` | `object` | `monaco.editor.IStandaloneEditorConstructionOptions` | 编辑器配置项 |
+
+<PropsTableVue></PropsTableVue>
 
 ### ZephyrEditor Exposes
 ---

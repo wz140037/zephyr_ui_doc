@@ -5,9 +5,6 @@
  * langueTheme.vue
 -->
 <script setup lang="ts">
-import 'element-plus/dist/index.css'
-import 'element-plus/theme-chalk/dark/css-vars.css'
-
 import { BundledLanguage, BundledTheme } from 'shiki'
 // import { ZephyrEditor } from '@zephyr_zz/zephyr-ui'
 import { nextTick, ref, useTemplateRef, watch } from 'vue';
