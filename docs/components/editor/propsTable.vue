@@ -36,7 +36,7 @@ const columns = [
 
 const data = [
   {
-    name: 'modelValue',
+    name: 'modelValue/v-model',
     type: 'string',
     default: '-',
     desc: '绑定的值'

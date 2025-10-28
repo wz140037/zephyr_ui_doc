@@ -29,15 +29,14 @@ export default defineConfig({
         {
           text: '基础组件',
           items: [
-            { text: 'Button 按钮', link: '/components/button' },
-            { text: 'Form 表单', link: '/components/form' },
+            { text: 'Button 按钮', link: '/components/button/button' },
+            { text: 'Form 表单', link: '/components/form/form' },
           ],
         },
         {
           text: '高级组件',
           items: [
             { text: 'ZephyrEditor 编辑器', link: '/components/editor/zephyreditor' },
-            { text: 'ZephyrFiledMap 字段映射', link: '/components/ZephyrFiledMap' },
           ]
         }
       ],

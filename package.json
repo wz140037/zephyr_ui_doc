@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/wz140037/zephyr_ui_doc#readme",
   "devDependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
     "element-plus": "^2.11.5",
     "gh-pages": "^6.3.0",
     "sass": "^1.93.2",

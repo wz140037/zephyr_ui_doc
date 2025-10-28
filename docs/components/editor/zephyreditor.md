@@ -13,6 +13,8 @@
   import LanguageThemeDemo from './LanguageTheme.vue';
   import RegisterCompletionProviderDemo from './registerCompletionProvider.vue';
   import PropsTableVue from './propsTable.vue';
+  import EmitsTableVue from './emitsTable.vue';
+  import ExposesTableVue from './exposeTable.vue';
 </script>
 
 <ClientOnly>
@@ -169,9 +171,12 @@ const handleEditorLoad = (e: ZzEditorLoadEvent) => {
 
 <PropsTableVue></PropsTableVue>
 
+### ZephyrEditor 事件
+---
+
+<EmitsTableVue></EmitsTableVue>
+
 ### ZephyrEditor Exposes
 ---
 
-| 属性名 | 类型 | 默认值 | 说明 |
-| :-- | :-- | :-- | :-- |
-| `registerCompletionItemProvider` | `(languageSelector: monaco.languages.LanguageSelector, provider: monaco.languages.CompletionItemProvider) => void` | `-` | 注册代码补全提示器，为指定语言添加智能提示。 |
+<ExposesTableVue></ExposesTableVue>

@@ -1,0 +1,7 @@
+/* 让 vitepress 只影响 markdown 表格，不动 el-table */
+.vp-doc table:not(.el-table) {
+  display: block;
+  border-collapse: collapse;
+  width: 100%;
+  overflow-x: auto;
+}
