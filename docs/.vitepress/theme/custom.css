@@ -1,7 +1,55 @@
-/* 让 vitepress 只影响 markdown 表格，不动 el-table */
-.vp-doc table:not(.el-table) {
+:root {
+  --vp-c-brand-1: #646cff;
+  --vp-c-brand-2: #747bff;
+}
+ 
+/* 代码执行实体 */
+.entity {
+  border: 1px solid #dedede;
+  padding: 20px;
+  border-radius: 5px;
+}
+ 
+/* 表单元素继承主题色 */
+.el-input__wrapper,
+.el-select__wrapper,
+.el-textarea__inner {
+  background-color: var(--vp-c-bg) !important;
+}
+ 
+/**
+ * 覆盖 vitePress自带的table样式
+ * -------------------------------------------------------------------------- */
+.zephyr_table table {
   display: block;
-  border-collapse: collapse;
-  width: 100%;
+  margin: 0;
   overflow-x: auto;
+}
+ 
+.zephyr_table tr {
+  background-color: var(--vp-c-bg) !important;
+  border-top: inherit;
+  transition: background-color 0.5s;
+}
+ 
+.el-table--enable-row-hover .el-table__body tr:hover>td.el-table__cell {
+  background-color: var(--vp-sidebar-bg-color) !important;
+}
+ 
+.zephyr_table th,
+.zephyr_table td {
+  border: inherit;
+  padding: inherit;
+}
+ 
+.el-table th.el-table__cell {
+  background-color: unset !important;
+}
+ 
+.el-table__body tr.hover-row.current-row>td.el-table__cell,
+.el-table__body tr.hover-row.el-table__row--striped.current-row>td.el-table__cell,
+.el-table__body tr.hover-row.el-table__row--striped>td.el-table__cell,
+.el-table__body tr.hover-row>td.el-table__cell,
+.el-table__body tr>td.hover-cell {
+  background-color: var(--vp-sidebar-bg-color) !important;
 }

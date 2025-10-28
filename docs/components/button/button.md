@@ -69,7 +69,9 @@ import { ZzButton } from '@zephyr_zz/zephyr-ui';
 </template>
 ```
 
-### Props
+## ZephyrButton API
+
+### ZephyrButton Props
 
 ----
 

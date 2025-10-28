@@ -1,7 +1,7 @@
 # ZephyrForm 表单
 
 ## 简介
-如果可以，我想和你。
+你的人生，无需校验。
 
 ## 基本用法
 <script setup lang="ts">

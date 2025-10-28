@@ -12,7 +12,7 @@ export default defineConfig({
     logo: '/image/logo.svg',
     nav: [
       { text: '指南', link: '/guide/' },
-      { text: '组件', link: '/components/button' },
+      { text: '组件', link: '/components/button/button' },
       { text: 'GitHub', link: 'https://github.com/wz140037/zephyr_ui_doc' },
     ],
     sidebar: {

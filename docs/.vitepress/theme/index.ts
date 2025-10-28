@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
-import 'element-plus/dist/index.css'
 import './custom.css'
+import 'element-plus/dist/index.css'
 
 export default {
   extends: DefaultTheme,
