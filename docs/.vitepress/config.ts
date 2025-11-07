@@ -37,6 +37,7 @@ export default defineConfig({
           text: '高级组件',
           items: [
             { text: 'ZephyrEditor 编辑器', link: '/components/editor/zephyreditor' },
+            { text: 'ZephyrWrapper 包裹器', link: '/components/wrapper/zephyrwrapper' },
           ]
         }
       ],
