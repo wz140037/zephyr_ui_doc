@@ -5,7 +5,6 @@
  * base.vue
 -->
 <script setup lang="ts">
-import { ZephyrWrapper } from '@zephyr_zz/zephyr-ui'
 import { ElScrollbar } from 'element-plus'
 
 </script>

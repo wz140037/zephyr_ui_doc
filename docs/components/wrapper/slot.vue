@@ -5,7 +5,6 @@
  * slot.vue
 -->
 <script setup lang="ts">
-import { ZephyrWrapper } from '@zephyr_zz/zephyr-ui'
 import { ElTooltip, ElButton } from 'element-plus'
 
 </script>
