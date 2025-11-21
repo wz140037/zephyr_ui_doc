@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import { ArrowDown } from '@element-plus/icons-vue'
 import { ElSelectV2, ElIcon } from 'element-plus'
-import { ref } from 'vue'
+import type { ElSelectV2 as ElSelectV2Type } from 'element-plus'
+import { markRaw, nextTick, ref, useTemplateRef } from 'vue'
 
 // 模拟100000条数据的options
 const options = Array.from({ length: 100000 }, (_, i) => {
@@ -39,11 +40,24 @@ const userData = ref([
 ])
 
 const activeIndex = ref<number | null>(null)
+const select = useTemplateRef<InstanceType<typeof ElSelectV2Type>>('selectRef')
 const handleClick = (index: number) => {
   if (activeIndex.value === index) {
     activeIndex.value = null
   } else {
     activeIndex.value = index
+  }
+  nextTick(() => {
+    console.log('ref', JSON.parse(JSON.stringify(markRaw(select))));
+    // select.value?.focus()
+  })
+}
+
+const handleVisibleChange = (visible: boolean) => {
+  if (!visible) {
+    nextTick(() => {
+      activeIndex.value = null
+    })
   }
 }
 
@@ -60,7 +74,8 @@ const handleClick = (index: number) => {
             <ArrowDown />
           </ElIcon>
         </div>
-        <ElSelectV2 v-if="activeIndex === index" :options="options" v-model="item.department"></ElSelectV2>
+        <ElSelectV2 v-if="activeIndex === index" :options="options" v-model="item.department" ref="selectRef"
+          @visibleChange="handleVisibleChange($event)"></ElSelectV2>
       </div>
     </div>
   </div>
