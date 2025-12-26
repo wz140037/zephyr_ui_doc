@@ -2,7 +2,9 @@
 import { ArrowDown } from '@element-plus/icons-vue'
 import { ElSelectV2, ElIcon } from 'element-plus'
 import type { ElSelectV2 as ElSelectV2Type } from 'element-plus'
-import { markRaw, nextTick, ref, useTemplateRef } from 'vue'
+import { nextTick, ref, useTemplateRef, watch } from 'vue'
+
+type ElSelectV2Instance = InstanceType<typeof ElSelectV2Type> | null
 
 // 模拟100000条数据的options
 const options = Array.from({ length: 100000 }, (_, i) => {
@@ -40,26 +42,22 @@ const userData = ref([
 ])
 
 const activeIndex = ref<number | null>(null)
-const select = useTemplateRef<InstanceType<typeof ElSelectV2Type>>('selectRef')
+const select = useTemplateRef<ElSelectV2Instance>('selectRef')
 const handleClick = (index: number) => {
-  if (activeIndex.value === index) {
-    activeIndex.value = null
-  } else {
-    activeIndex.value = index
-  }
-  nextTick(() => {
-    console.log('ref', JSON.parse(JSON.stringify(markRaw(select))));
-    // select.value?.focus()
-  })
+  activeIndex.value = index
 }
 
-const handleVisibleChange = (visible: boolean) => {
-  if (!visible) {
-    nextTick(() => {
-      activeIndex.value = null
-    })
+watch(() => activeIndex.value, async (v) => {
+  if (v || v === 0) {
+    await nextTick()
+    const root = select.value?.[0]?.$el
+    const input = root?.querySelector('input') as HTMLElement | null
+    if (input) {
+      input.focus()
+      input.click()
+    }
   }
-}
+}, { immediate: true, deep: true })
 
 </script>
 
@@ -74,8 +72,8 @@ const handleVisibleChange = (visible: boolean) => {
             <ArrowDown />
           </ElIcon>
         </div>
-        <ElSelectV2 v-if="activeIndex === index" :options="options" v-model="item.department" ref="selectRef"
-          @visibleChange="handleVisibleChange($event)"></ElSelectV2>
+        <ElSelectV2 v-if="activeIndex === index" :options="options" v-model="item.department" ref="selectRef">
+        </ElSelectV2>
       </div>
     </div>
   </div>
