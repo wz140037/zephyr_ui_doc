@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@zephyr_zz/zephyr-ui':
-        specifier: ^0.0.20
-        version: 0.0.20(vue@3.5.22)
+        specifier: ^0.0.21
+        version: 0.0.21(vue@3.5.22)
     devDependencies:
       '@element-plus/icons-vue':
         specifier: ^2.3.2
@@ -740,8 +740,8 @@ packages:
   '@vueuse/shared@9.13.0':
     resolution: {integrity: sha512-UrnhU+Cnufu4S6JLCPZnkWh0WwZGUp72ktOF2DFptMlOs3TOdVv8xJN53zhHGARmVOsz5KqOls09+J1NR6sBKw==}
 
-  '@zephyr_zz/zephyr-ui@0.0.20':
-    resolution: {integrity: sha512-017fMCreGg0ZfcQmY6eocTEbfrZdzpvm4h44eWDSBK2U+omtOqUUoVuAJtf+Idp3FLcvq0Pgeocv+CMR9DhFnA==}
+  '@zephyr_zz/zephyr-ui@0.0.21':
+    resolution: {integrity: sha512-wtEky/XIGYDj5A7bQ0wDnaQXQ4r/eHlWUbdpYRogZDQ8sSjPTO/KrBVjoDrwaeAKC4QRo+UHbX2z4O0fKY6AfA==}
 
   algoliasearch@5.41.0:
     resolution: {integrity: sha512-9E4b3rJmYbBkn7e3aAPt1as+VVnRhsR4qwRRgOzpeyz4PAOuwKh0HI4AN6mTrqK0S0M9fCCSTOUnuJ8gPY/tvA==}
@@ -1919,7 +1919,7 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
-  '@zephyr_zz/zephyr-ui@0.0.20(vue@3.5.22)':
+  '@zephyr_zz/zephyr-ui@0.0.21(vue@3.5.22)':
     dependencies:
       '@shikijs/monaco': 1.29.2
       '@vueuse/core': 14.0.0(vue@3.5.22)

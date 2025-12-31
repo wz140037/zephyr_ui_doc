@@ -43,7 +43,14 @@ export default defineConfig({
         {
           text: '游乐场',
           items: [
-            { text: 'VirtualSelect 实践', link: '/components/virtual-select/select' }
+            { 
+              text: 'VirtualSelect 实践', 
+              link: '/components/virtual-select/select' 
+            },
+            {
+              text:'ZephyrAudioConverter 处理器',
+              link: '/components/audio/ZephyrAudioConverter'
+            }
           ]
         }
       ],
