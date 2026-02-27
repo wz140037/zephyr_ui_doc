@@ -45,6 +45,21 @@ const effect = computed(() => vitepressP.isDark.value ? 'dark' : 'light')
           </ElTooltip>
         </div>
       </template>
+      <!-- 类型列，根据|分割，使用tag展示 -->
+      <template v-if="column.type === 'type'" #default="{ row }">
+        <ElTooltip trigger="click" :effect="effect" popper-class="zephyr_tooltip">
+          <template #content>
+            <div class="column_type">
+              <ElTag v-for="item in row[column.prop].split(column['split'] || '|')" :key="item" type="primary">
+                {{ item }}
+              </ElTag>
+            </div>
+          </template>
+          <ElIcon>
+            <Warning />
+          </ElIcon>
+        </ElTooltip>
+      </template>
     </ElTableColumn>
   </ElTable>
 </template>
@@ -75,6 +90,18 @@ const effect = computed(() => vitepressP.isDark.value ? 'dark' : 'light')
   .tooltip_content.is-dark {
     color: #409eff;
     background-color: rgba(64, 158, 255, .1);
+  }
+
+  .column_type {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    flex-wrap: wrap;
+    align-items: center;
+
+    >*+* {
+      margin-left: 5px;
+    }
   }
 }
 </style>

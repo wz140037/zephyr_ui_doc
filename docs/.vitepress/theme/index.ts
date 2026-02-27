@@ -7,9 +7,10 @@ export default {
   async enhanceApp({ app }) {
     if (typeof window !== 'undefined') {
       // 使用动态 import 并放到浏览器环境执行
-      import('@zephyr_zz/zephyr-ui').then(({ ZephyrEditor, ZzButton }) => {
-        app.component('ZephyrEditor', ZephyrEditor)
-        app.component('ZzButton', ZzButton)
+      import('@zephyr_zz/zephyr-ui').then((components) => {
+        Object.keys(components).forEach((key) => {
+          app.component(key, components[key])
+        })
       })
     }
   }

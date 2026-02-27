@@ -29,14 +29,28 @@ export default defineConfig({
         {
           text: '基础组件',
           items: [
-            { text: 'Button 按钮', link: '/components/button/button' },
-            { text: 'Form 表单', link: '/components/form/form' },
+            { text: 'ZephyrButton 按钮', link: '/components/button/button' },
+            { text: 'ZephyrForm 表单', link: '/components/form/form' },
           ],
         },
         {
           text: '高级组件',
           items: [
             { text: 'ZephyrEditor 编辑器', link: '/components/editor/zephyreditor' },
+            { text: 'ZephyrWrapper 包裹器', link: '/components/wrapper/zephyrwrapper' },
+          ]
+        },
+        {
+          text: '游乐场',
+          items: [
+            { 
+              text: 'VirtualSelect 实践', 
+              link: '/components/virtual-select/select' 
+            },
+            {
+              text:'ZephyrAudioConverter 处理器',
+              link: '/components/audio/ZephyrAudioConverter'
+            }
           ]
         }
       ],
