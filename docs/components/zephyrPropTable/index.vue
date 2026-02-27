@@ -50,7 +50,7 @@ const effect = computed(() => vitepressP.isDark.value ? 'dark' : 'light')
         <ElTooltip trigger="click" :effect="effect" popper-class="zephyr_tooltip">
           <template #content>
             <div class="column_type">
-              <ElTag v-for="item in row[column.prop].split('|')" :key="item" type="primary">
+              <ElTag v-for="item in row[column.prop].split(column['split'] || '|')" :key="item" type="primary">
                 {{ item }}
               </ElTag>
             </div>
